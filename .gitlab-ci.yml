@@ -3,7 +3,6 @@ image: python:3.12
 stages:
   - setup
   - test
-  - deploy
 
 before_script:
   - python --version ; pip --version  # For debugging
@@ -30,8 +29,3 @@ unit-test:
       - coverage
     expire_in: 1 week
 
-deploy:
-  stage: deploy
-  script:
-    - flet pack src/main.py
-  environment: production
