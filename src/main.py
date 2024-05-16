@@ -1,5 +1,6 @@
 import flet as ft
 from models import *
+from ui import TransactionUI
 import atexit
 
 class MainPage:
@@ -12,16 +13,17 @@ class MainPage:
     modeButton : ft.Switch
     page : ft.Page
 
+    transaction = TransactionUI
+
     def __init__(self, page: ft.Page) -> None:
         self.page = page
         self.page.theme_mode = ft.ThemeMode.LIGHT
         self.__init_mainFrame()
         self.page.add(self.mainFrame)
         self.page.update()
-        # atexit.register(self.transaction.right.empty_cart_onclick)
 
     def __init_mainFrame(self):
-        # self.page.floating_action_button.visible = False
+        self.transaction = TransactionUI(self.page)
         self.__init_sideBar()
         self.__init_rightFrame()
         self.mainFrame = ft.Row(
@@ -88,6 +90,6 @@ class MainPage:
     
     def __init_rightFrame(self):
         self.rightFrame = ft.Container(expand=True)
-        # self.rightFrame.content = self.transaction
+        self.rightFrame.content = self.transaction
 
 app = ft.app(target=MainPage, name="Kasirkeun", assets_dir="assets")
