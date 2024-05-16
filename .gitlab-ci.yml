@@ -29,3 +29,8 @@ unit-test:
       - coverage
     expire_in: 1 week
 
+deploy:
+  stage: deploy
+  script:
+    - flet pack src/main.py
+  environment: production
