@@ -41,47 +41,47 @@ Halaman ini berfungsi untuk melihat segala transaksi yang pernah terjadi selama 
 
 ## Daftar Modul
 1. Kasirkeun Executive
-Dibagikan kepada:
+Dibagikan kepada: All
 Gambar:
 
 
 2. Cart Controller
-Dibagikan kepada:
+Dibagikan kepada: Berto Richardo Togatorop
 Gambar:
 
 
 3. Database Controller
-Dibagikan kepada:
+Dibagikan kepada: Suthasoma Mahardhika Munthe
 Gambar:
 
 
 4. Modify Goods and Coupon in the cart
-Dibagikan kepada:
+Dibagikan kepada: Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
 Gambar:
 
 
 5. View History
-Dibagikan kepada:
+Dibagikan kepada: Berto Richardo Togatorop
 Gambar:
 
 
 6. Search Goods and Coupons
-Dibagikan kepada:
+Dibagikan kepada: Suthasoma Mahardhika Munthe
 Gambar:
 
 
 7. Modify Goods and Coupon in the database
-Dibagikan kepada:
+Dibagikan kepada: Suthasoma Mahardhika Munthe, Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
 Gambar:
 
 
 8. View database
-Dibagikan kepada:
+Dibagikan kepada: Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
 Gambar:
 
 
 9. Execute transaction
-Dibagikan kepada:
+Dibagikan kepada: Suthasoma Mahardhika Munthe, Berto Richardo Togatorop
 Gambar:
 
 
