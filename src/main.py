@@ -1,6 +1,6 @@
 import flet as ft
 from models import *
-from ui import TransactionUI, ManagementUI
+from ui import TransactionUI, HistoryUI, ManagementUI
 import atexit
 
 class MainPage:
@@ -14,8 +14,8 @@ class MainPage:
     page : ft.Page
 
     transaction = TransactionUI
+    history = HistoryUI
     management = ManagementUI
-
 
     def __init__(self, page: ft.Page) -> None:
         self.page = page
@@ -27,6 +27,7 @@ class MainPage:
 
     def __init_mainFrame(self):
         self.transaction = TransactionUI(self.page)
+        self.history = HistoryUI()
         self.management = ManagementUI(self.page)
         self.page.floating_action_button.visible = False
         self.__init_sideBar()
@@ -57,6 +58,14 @@ class MainPage:
                 self.management.couponManager.update_interface()
             else:
                 self.management.goodManager.update_interface()
+
+        else:
+            self.rightFrame.content = self.history
+            self.page.floating_action_button.visible = False
+            self.rightFrame.update()
+            self.page.update()
+            self.history.onchange_filter(None)
+            self.history.deselect()
 
     def on_theme_change(self, e):
         if e.control.value:
