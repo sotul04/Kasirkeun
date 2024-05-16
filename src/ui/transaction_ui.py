@@ -252,7 +252,7 @@ class TransactionInterface(ft.Container):
                     ft.Container(
                         content=ft.Row(
                             [
-                                ft.Image(src="src/assets/trolley.png", width=70, height=70),
+                                ft.Image(src="img/trolley.png", width=70, height=70),
                                 ft.Text(value="Keranjang", size=30),
                             ]
                         ),
