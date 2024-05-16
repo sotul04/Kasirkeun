@@ -1,6 +1,6 @@
 import flet as ft
 from models import *
-from ui import TransactionUI
+from ui import TransactionUI, ManagementUI
 import atexit
 
 class MainPage:
@@ -14,6 +14,8 @@ class MainPage:
     page : ft.Page
 
     transaction = TransactionUI
+    management = ManagementUI
+
 
     def __init__(self, page: ft.Page) -> None:
         self.page = page
@@ -21,9 +23,12 @@ class MainPage:
         self.__init_mainFrame()
         self.page.add(self.mainFrame)
         self.page.update()
+        atexit.register(self.transaction.right.empty_cart_onclick)
 
     def __init_mainFrame(self):
         self.transaction = TransactionUI(self.page)
+        self.management = ManagementUI(self.page)
+        self.page.floating_action_button.visible = False
         self.__init_sideBar()
         self.__init_rightFrame()
         self.mainFrame = ft.Row(
@@ -36,7 +41,22 @@ class MainPage:
         )
     
     def on_change_sideBar(self, e : ft.ControlEvent):
-        pass
+        if e.control.selected_index == 0:
+            self.rightFrame.content = self.transaction
+            self.page.floating_action_button.visible = False
+            self.rightFrame.update()
+            self.transaction.left.update_interface()
+            self.page.update()
+        elif e.control.selected_index == 1:
+            self.page.floating_action_button.visible = True
+            self.rightFrame.content = self.management
+            self.rightFrame.update()
+            self.page.update()
+            if self.management.isCoupon:
+                self.management.couponManager.deselect_item()
+                self.management.couponManager.update_interface()
+            else:
+                self.management.goodManager.update_interface()
 
     def on_theme_change(self, e):
         if e.control.value:
