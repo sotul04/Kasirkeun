@@ -21,11 +21,9 @@ class MainPage:
         self.__init_mainFrame()
         self.page.add(self.mainFrame)
         self.page.update()
-        # atexit.register(self.transaction.right.empty_cart_onclick)
 
     def __init_mainFrame(self):
         self.transaction = TransactionUI(self.page)
-        # self.page.floating_action_button.visible = False
         self.__init_sideBar()
         self.__init_rightFrame()
         self.mainFrame = ft.Row(
