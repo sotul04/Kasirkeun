@@ -14,7 +14,7 @@ class Coupon:
     def get_idCoupon(self):
         return self.idCoupon
     
-    @property
+    @get_idCoupon.setter
     def set_idCoupon(self, value):
         self.idCoupon = value
 
@@ -22,7 +22,7 @@ class Coupon:
     def get_code(self):
         return self.code
     
-    @property
+    @get_code.setter
     def set_code(self, value):
         self.code = value
 
