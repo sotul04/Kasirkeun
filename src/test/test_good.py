@@ -1,4 +1,4 @@
-from src.models.Good import Good
+from models import Good
 
 class TestGood:
 

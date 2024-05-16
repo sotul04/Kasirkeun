@@ -1,6 +1,4 @@
-from src.models.Coupon import Coupon
-from src.models.Coupon import FreeCoupon
-from src.models.Coupon import DiscountCoupon
+from models import Coupon, FreeCoupon, DiscountCoupon
 
 class TestCoupon:
 
