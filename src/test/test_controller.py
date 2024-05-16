@@ -93,6 +93,33 @@ class TestController:
         assert CouponController.deleteByID(4) == False
 
     def test_transaction_controller(self):
+        
+        good1 = GoodController.getItem(1)
+        good2 = GoodController.getItem(2)
+        good3 = GoodController.getItem(3)
+
+        item1 = Triple(good1, 1, 10000.0)
+        item2 = Triple(good2, 1, 10000.0)
+        item3 = Triple(good3, 4, 40000.0)
+
+        tr = Transaction(1, 2, 3, [item1, item2, item3], 60000.0, "", 3000.0)
+
+        TransactionController.addTransaction(tr)
+
+        tr_get = TransactionController.getTransaction(1)
+
+        assert tr_get.get_couponDiscount == tr.get_couponDiscount
+        assert tr_get.get_couponFree == tr.get_couponFree
+        assert tr_get.get_totalPrice == tr.get_totalPrice
+        assert tr_get.get_discount == tr.get_discount
+        assert len(tr_get.get_items) == len(tr.get_items)
+
+        rows = TransactionController.getSoldGoods(1)
+
+        assert len(rows) == 3
+
+        assert CouponController.isFreeCouponExist("BERTOOO2") == False
+        assert CouponController.isDiscountCouponExist("SUTHAAA1") == False
 
         connection.close()
         os.remove("src/data/KasirkeunData.db")

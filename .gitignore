@@ -2,3 +2,6 @@
 __pychache__/
 *.pyc
 *.db
+/build
+*.spec
+/dist
