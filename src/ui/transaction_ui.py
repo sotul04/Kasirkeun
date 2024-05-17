@@ -433,9 +433,10 @@ class TransactionInterface(ft.Container):
     
     def updateDiscount(self):
         if self.currentDiscount != None:
-            disc = self.currentTrc.get_totalPrice * self.currentDiscount.get_percentage
-            self.currentTrc.discount = disc if disc <= self.currentDiscount.get_maxDiscount else self.currentDiscount.get_maxDiscount
+            self.currentTrc.discount = self.currentDiscount.discount(self.currentTrc.get_totalPrice)
             self.discount.value = f" - Rp {self.currentTrc.get_discount:,.1f}"
+        else :
+            self.discount.value = None
         self.update()
     
     def submitDiscountCoupon_onclick(self, _):
@@ -503,20 +504,22 @@ class TransactionInterface(ft.Container):
                 self.currentDiscount = None
             else:
                 self.currentTrc.totalPrice -= self.currentTrc.discount
+        totalPrice = self.currentTrc.get_totalPrice
+        discountTotal = self.currentTrc.get_discount 
         TransactionController.addTransaction(self.currentTrc)
         self.currentDiscount = None
         self.freeItem = None
         self. freeItemElement = None
         self.currentTrc = Transaction()
         self.currentTrc.items = []
-        self.freeCoupon.value = ""
-        self.discountCoupon.value = ""
+        self.freeCoupon.value = None
+        self.discountCoupon.value = None
         self.removeDiscountCoupon.visible = False
         self.removeFreeCoupon.visible = False
         self.submitDiscountCoupon.visible = True
         self.submitFreeCoupon.visible = True
         self.update_all_transaction()
-        dialog = DialogAlert(self.page ,info="Transaksi berhasil", title="Success")
+        dialog = DialogAlert(self.page ,info=f"Transaksi berhasil\nTotal pembayaran \tRp {totalPrice}\n{"Tidak ada diskon yang dipakai" if discountTotal <= 0 else "Total diskon: \tRp "+str(discountTotal)}", title="Success")
         dialog.open_dlg()
     
     def add_item(self, item : Triple):

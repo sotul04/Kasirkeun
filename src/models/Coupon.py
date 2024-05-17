@@ -127,6 +127,7 @@ class DiscountCoupon(Coupon):
 
     def discount(self, price : float):
         disc = price*self.percentage
+        disc /= 100
         if (disc > self.maxDiscount):
             disc = self.maxDiscount
         return disc
