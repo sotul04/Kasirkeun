@@ -87,7 +87,7 @@ Gambar 2: ![Module 6.2](doc/Modul_6_2_SearchCoupon.png)
 
 Dibagikan kepada: Suthasoma Mahardhika Munthe, Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
 
-Gambar 1: ![Module 7.1](doc/Modul_7_1_ModifyGoodDatabase.png)
+Gambar 1: ![Module 7.1](doc/Modul_7_1_ModifyGoodsDatabase.png)
 
 Gambar 2: ![Module 7.2](doc/Modul_7_2_ModifyCouponDatabase.png)
 
