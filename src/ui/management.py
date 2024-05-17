@@ -41,11 +41,17 @@ class GoodBox(ft.Card):
                 ]
             ),
             ink=True,
-            on_click= lambda _: self.onclick_container()
+            on_click= lambda _: self.onclick_container(),
+            animate_scale=ft.Animation(300, ft.AnimationCurve.EASE),
+            on_hover= lambda e: self.on_hover_content(e),
         )
 
     def onclick_container(self):
         self.father.select_item(self.good)
+
+    def on_hover_content(self, e):
+        self.content.scale = 1.03 if e.data == "true" else 1
+        self.update()
 
 class GoodView(ft.Container):
 
@@ -312,8 +318,14 @@ class CouponBox(ft.Card):
                 trailing=ft.Text(f"{self.coupon.get_code}")
             ),
             ink=True,
-            on_click= lambda _: self.onclick_container()
+            on_click= lambda _: self.onclick_container(),
+            animate_scale=ft.Animation(300, ft.AnimationCurve.EASE),
+            on_hover= lambda e: self.on_hover_content(e),
         )
+    
+    def on_hover_content(self, e):
+        self.content.scale = 1.03 if e.data == "true" else 1
+        self.update()
     
     def onclick_container(self):
         self.father.select_item(self.coupon)

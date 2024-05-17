@@ -24,8 +24,14 @@ class HistoryCard(ft.Card):
                 trailing=ft.Text(f"Rp {self.transaction.get_totalPrice:,.1f}", size=16)
             ),
             ink=True,
-            on_click= lambda e: self.button_onclick(e)
+            on_click= lambda e: self.button_onclick(e),
+            animate_scale=ft.Animation(300, ft.AnimationCurve.EASE),
+            on_hover= lambda e: self.on_hover_content(e),
         )
+    
+    def on_hover_content(self, e):
+        self.content.scale = 1.03 if e.data == "true" else 1
+        self.update()
     
     def button_onclick(self, _):
         trc = TransactionController.getTransaction(self.transaction.get_idTransaction)
@@ -58,10 +64,16 @@ class DetailGoods(ft.Card):
                 subtitle=ft.Text(f"Rp {self.good.get_third:,.1f}"),
                 trailing=ft.Text(f"{self.good.get_second}", size=20)
             ),
+            animate_scale=ft.Animation(300, ft.AnimationCurve.EASE),
+            on_hover= lambda e: self.on_hover_content(e)
         )
         if self.good.get_first.get_name == None:
             self.nameGood.value = "Unidentified Good"
             self.nameGood.color = ft.colors.RED
+    
+    def on_hover_content(self, e):
+        self.content.scale = 1.03 if e.data == "true" else 1
+        self.update()
     
     def __init_quantityLabel(self):
         self.quantityLabel = ft.Text(str(self.good.get_second))
