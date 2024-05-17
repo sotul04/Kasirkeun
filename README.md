@@ -41,49 +41,71 @@ Halaman ini berfungsi untuk melihat segala transaksi yang pernah terjadi selama 
 
 ## Daftar Modul
 1. Kasirkeun Executive
-Dibagikan kepada: All
-Gambar:
 
+Dibagikan kepada: All
+
+Gambar: ![Module 1](doc/Modul_1_KasirkeunExecutive.png)
 
 2. Cart Controller
-Dibagikan kepada: Berto Richardo Togatorop
-Gambar:
 
+Dibagikan kepada: Berto Richardo Togatorop
+
+Gambar: ![Module 2](doc/Modul_2_CartController.png)
 
 3. Database Controller
-Dibagikan kepada: Suthasoma Mahardhika Munthe
-Gambar:
 
+Dibagikan kepada: Suthasoma Mahardhika Munthe
+
+Gambar 1: ![Module 3.1](doc/Modul_3_1_DatabaseController_Produk.png)
+
+Gambar 2: ![Module 3.2](doc/Modul_3_2_DatabaseController_Kupon.png)
 
 4. Modify Goods and Coupon in the cart
-Dibagikan kepada: Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
-Gambar:
 
+Dibagikan kepada: Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
+
+Gambar 1: ![Module 4.1](doc/Modul_4_1_ModifyGoodCart.png)
+
+Gambar 2: ![Module 4.2](doc/Modul_4_2_ModifyCouponCart.png)
 
 5. View History
-Dibagikan kepada: Berto Richardo Togatorop
-Gambar:
 
+Dibagikan kepada: Berto Richardo Togatorop
+
+Gambar: ![Module 5](doc/Modul_5_ViewHistory.png)
 
 6. Search Goods and Coupons
+
 Dibagikan kepada: Suthasoma Mahardhika Munthe
-Gambar:
+
+Gambar 1: ![Module 6.1](doc/Modul_6_1_SearchGoods.png)
+
+Gambar 2: ![Module 6.2](doc/Modul_6_2_SearchCoupon.png)
 
 
 7. Modify Goods and Coupon in the database
-Dibagikan kepada: Suthasoma Mahardhika Munthe, Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
-Gambar:
 
+Dibagikan kepada: Suthasoma Mahardhika Munthe, Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
+
+Gambar 1: ![Module 7.1](doc/Modul_7_1_ModifyGoodsDatabase.png)
+
+Gambar 2: ![Module 7.2](doc/Modul_7_2_ModifyCouponDatabase.png)
 
 8. View database
-Dibagikan kepada: Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
-Gambar:
 
+Dibagikan kepada: Benjamin Sihombing, Ibrahim Ihsan Rasyid, Marvin Scifo Y. Hutahaean
+
+Gambar 1: ![Module 8.1](doc/Modul_8_1_ViewGoodsDatabase.png)
+
+Gambar 2: ![Module 8.2](doc/Modul_8_2_ViewCouponsDatabase.png)
+
+Gambar 3: ![Module 8.3](doc/Modul_8_3_ViewTransactionDatabase.png)
 
 9. Execute transaction
-Dibagikan kepada: Suthasoma Mahardhika Munthe, Berto Richardo Togatorop
-Gambar:
 
+Dibagikan kepada: Suthasoma Mahardhika Munthe, Berto Richardo Togatorop
+
+Gambar: ![Module 9](doc/Modul_9_ExecuteTransaction.png)
 
 ## Database
 Database yang digunakan terdapat pada ./src/data/KasirkeunData.db
@@ -126,3 +148,10 @@ Database yang digunakan terdapat pada ./src/data/KasirkeunData.db
 - min_buy
 - percentage
 - max_discount
+
+## Contributors
+1. Ibrahim Ihsan Rasyid - 13522018
+2. Benjamin Sihombing - 13522054
+3. Suthasoma Mahardhika Munthe - 13522098
+4. Marvin Scifo Y. Hutahaean - 13522110
+5. Berto Richardo Togatorop - 13522118
