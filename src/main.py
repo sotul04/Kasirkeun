@@ -1,6 +1,7 @@
 import flet as ft
 from models import *
 from ui import TransactionUI, HistoryUI, ManagementUI
+from data import connection
 import atexit
 
 class MainPage:
@@ -22,8 +23,13 @@ class MainPage:
         self.page.theme_mode = ft.ThemeMode.LIGHT
         self.__init_mainFrame()
         self.page.add(self.mainFrame)
+        self.page.title = "Kasirkeun"
         self.page.update()
-        atexit.register(self.transaction.right.empty_cart_onclick)
+        atexit.register(self.exit_app)
+    
+    def exit_app(self):
+        self.transaction.right.empty_cart_onclick()
+        connection.close()
 
     def __init_mainFrame(self):
         self.transaction = TransactionUI(self.page)
