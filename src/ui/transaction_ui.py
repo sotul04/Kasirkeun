@@ -58,7 +58,9 @@ class GoodBox(ft.Card):
                         ]
                     )
                 ]
-            )
+            ),
+            animate_scale=ft.Animation(300, ft.AnimationCurve.EASE),
+            on_hover= lambda e: self.on_hover_content(e),
         )
         if type == 0:
             self.editButton.visible = False
@@ -67,6 +69,10 @@ class GoodBox(ft.Card):
                 self.addButton.disabled = True
         else:
             self.addButton = False
+    
+    def on_hover_content(self, e):
+        self.content.scale = 1.03 if e.data == "true" else 1
+        self.update()
     
     def __init_addButton(self):
         self.addButton = ft.ElevatedButton(
@@ -613,7 +619,9 @@ class GoodCart(ft.Card):
                     )
                 ],
                 alignment=ft.MainAxisAlignment.CENTER
-            )
+            ),
+            animate_scale=ft.Animation(300, ft.AnimationCurve.EASE),
+            on_hover= lambda e: self.on_hover_content(e),
         )
         if isFree:
             self.subButton.visible = False
@@ -622,6 +630,10 @@ class GoodCart(ft.Card):
             self.quantityLabel.value = f"{self.good.get_second}   "
             self.quantityLabel.size = 18
             self.content.border_radius = 10
+    
+    def on_hover_content(self, e):
+        self.content.scale = 1.03 if e.data == "true" else 1
+        self.update()
     
     def __init_addButton(self):
         self.addButton = ft.IconButton(
