@@ -20,7 +20,7 @@ class DialogAlert(ft.AlertDialog):
                 ft.TextButton("Ya", on_click= lambda e: self.close_dlg(e)),
                 ft.TextButton("Batal", on_click= lambda e: self.close_dlg(e))
             ]
-        self.on_dismiss=lambda e : None
+        self.on_dismiss=lambda e : self.close_dlq(e)
     
     def close_dlq(self, e):
         self.open = False

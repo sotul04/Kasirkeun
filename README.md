@@ -14,7 +14,7 @@ Halaman ini berfungsi untuk melakukan pengelolaan terhadap dua dari beberapa kom
 Halaman ini berfungsi untuk melihat segala transaksi yang pernah terjadi selama penggunaan aplikasi Kasirkeun. Pada seluruh informasi transaksi yang tersimpan, pengguna bisa melihat barang-barang apa saja yang dibeli pada transaksi tersebut dan kupon apa yang dipakai pada transaksi tersebut.
 
 ## Cara Menjalankan Aplikasi
-1. Silakan membuka direktori dari Kasirkeun dan klik yang namanya "run.bat"
+1. Silakan membuka direktori dari Kasirkeun dan jalankan yang namanya ```run.bat```. Ada alternatif lain, open file ```main.exe``` secara langsung. Jika file ```main.exe``` belum ada, Anda dapat membuka aplikasi dengan dengan menjalankan ```raw-run.bat```.
 
 2. Halaman transaksi akan terbuka dan pengguna bisa melakukan beberapa hal pada aplikasi tersebut. Terdapat 3 tombol sebelah kiri yang bisa digunakan untuk memilih halaman yang digunakan
 
